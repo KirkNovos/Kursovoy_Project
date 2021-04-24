@@ -1,0 +1,6 @@
+Title, Price, ProductType,StorageTitle,StorageCount
+Wi-Fi Keenetic Air (KN-1611),2000,роутер,Wi-Fi Keenetic Air (KN-1611),100
+Wi-Fi TP-Link Archer T2U Plus,1340, приемник,Wi-Fi TP-Link Archer T2U Plus,35
+Wi-Fi TP-Link AC1200 (Archer C50),2590,роутер,Wi-Fi TP-Link AC1200 (Archer C50),99
+Wi-Fi роутер Keenetic Speedster (KN-3010),6590,роутер,Wi-Fi Keenetic Speedster (KN-3010),69
+Wi-Fi TP-Link TL-WN725N,490,приемник,Wi-Fi TP-Link TL-WN725N,135
