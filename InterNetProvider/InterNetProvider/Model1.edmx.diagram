@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="079f746f950941bab8cea24f55d8f100" Name="Diagram1">
+        <EntityTypeShape EntityType="inetprovider_kpModel.Product" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="inetprovider_kpModel.ProductType" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="inetprovider_kpModel.Provider" Width="1.5" PointX="0.75" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="inetprovider_kpModel.ProviderOrder" Width="1.5" PointX="3" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="inetprovider_kpModel.ProviderOrderProduct" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="inetprovider_kpModel.Storage" Width="1.5" PointX="0.75" PointY="5.375" IsExpanded="true" />
+        <AssociationConnector Association="inetprovider_kpModel.FK_Product_ProductType" ManuallyRouted="false" />
+        <AssociationConnector Association="inetprovider_kpModel.FK_Product_Storage" ManuallyRouted="false" />
+        <AssociationConnector Association="inetprovider_kpModel.FK_ProviderOrderProduct_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="inetprovider_kpModel.FK_ProviderOrder_Provider" ManuallyRouted="false" />
+        <AssociationConnector Association="inetprovider_kpModel.FK_ProviderOrderProduct_ProviderOrder" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
