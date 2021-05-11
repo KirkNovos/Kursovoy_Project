@@ -14,8 +14,8 @@
 
         <StackPanel VerticalAlignment="Bottom">
             <Button Margin="5">Склад</Button>
-            <Button Margin="5">Заказ поставок</Button>
-            <Button Margin="5">Выход</Button>
+            <Button Margin="5" x:Name="OrderProvid" Content="Заказ поставок" Click="OrdProvidClick"></Button>
+            <Button Margin="5" x:Name="ExitBtn" Content="Выход" Click="ExitButtonClick"></Button>
         </StackPanel>
         
         <ListView
@@ -51,8 +51,7 @@
                     <Image
                         Width="64" 
                         Height="64"
-                        Source="{Binding Path=ImagePreview}" />
-                    <!-- ,TargetNullValue={StaticResource DefaultImage} -->
+                        Source="{Binding Logo}" />
 
                     <TextBlock 
                         Text="{Binding Price}" 

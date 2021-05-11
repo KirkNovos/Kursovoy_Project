@@ -40,5 +40,15 @@ namespace InterNetProvider
             this.DataContext = this;
             ProductList = Core.DB.Product.ToList();
         }
+
+        private void ExitButtonClick(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+        private void OrdProvidClick(object sender, RoutedEventArgs e)
+        {
+            var Ord = new Windows.Order();
+            Ord.ShowDialog();
+        }
     }
 }

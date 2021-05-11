@@ -20,3 +20,27 @@ C:\Users\Kirk Novos\Desktop\InternetProvider\Kirill\App\InterNetProvider\InterNe
 C:\Users\Kirk Novos\Desktop\InternetProvider\Kirill\App\InterNetProvider\InterNetProvider\obj\Debug\InterNetProvider.csproj.CopyComplete
 C:\Users\Kirk Novos\Desktop\InternetProvider\Kirill\App\InterNetProvider\InterNetProvider\obj\Debug\InterNetProvider.exe
 C:\Users\Kirk Novos\Desktop\InternetProvider\Kirill\App\InterNetProvider\InterNetProvider\obj\Debug\InterNetProvider.pdb
+C:\Users\User\Desktop\git\Kursovoy_Project\InterNetProvider\InterNetProvider\bin\Debug\InterNetProvider.exe.config
+C:\Users\User\Desktop\git\Kursovoy_Project\InterNetProvider\InterNetProvider\bin\Debug\InterNetProvider.exe
+C:\Users\User\Desktop\git\Kursovoy_Project\InterNetProvider\InterNetProvider\bin\Debug\InterNetProvider.pdb
+C:\Users\User\Desktop\git\Kursovoy_Project\InterNetProvider\InterNetProvider\bin\Debug\EntityFramework.dll
+C:\Users\User\Desktop\git\Kursovoy_Project\InterNetProvider\InterNetProvider\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\User\Desktop\git\Kursovoy_Project\InterNetProvider\InterNetProvider\bin\Debug\EntityFramework.xml
+C:\Users\User\Desktop\git\Kursovoy_Project\InterNetProvider\InterNetProvider\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\User\Desktop\git\Kursovoy_Project\InterNetProvider\InterNetProvider\bin\Debug\ru\EntityFramework.resources.dll
+C:\Users\User\Desktop\git\Kursovoy_Project\InterNetProvider\InterNetProvider\obj\Debug\InterNetProvider.csprojAssemblyReference.cache
+C:\Users\User\Desktop\git\Kursovoy_Project\InterNetProvider\InterNetProvider\obj\Debug\MainWindow.g.cs
+C:\Users\User\Desktop\git\Kursovoy_Project\InterNetProvider\InterNetProvider\obj\Debug\App.g.cs
+C:\Users\User\Desktop\git\Kursovoy_Project\InterNetProvider\InterNetProvider\obj\Debug\InterNetProvider_Content.g.cs
+C:\Users\User\Desktop\git\Kursovoy_Project\InterNetProvider\InterNetProvider\obj\Debug\InterNetProvider_MarkupCompile.cache
+C:\Users\User\Desktop\git\Kursovoy_Project\InterNetProvider\InterNetProvider\obj\Debug\InterNetProvider_MarkupCompile.lref
+C:\Users\User\Desktop\git\Kursovoy_Project\InterNetProvider\InterNetProvider\obj\Debug\MainWindow.baml
+C:\Users\User\Desktop\git\Kursovoy_Project\InterNetProvider\InterNetProvider\obj\Debug\InterNetProvider.g.resources
+C:\Users\User\Desktop\git\Kursovoy_Project\InterNetProvider\InterNetProvider\obj\Debug\InterNetProvider.Properties.Resources.resources
+C:\Users\User\Desktop\git\Kursovoy_Project\InterNetProvider\InterNetProvider\obj\Debug\InterNetProvider.csproj.GenerateResource.cache
+C:\Users\User\Desktop\git\Kursovoy_Project\InterNetProvider\InterNetProvider\obj\Debug\InterNetProvider.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\git\Kursovoy_Project\InterNetProvider\InterNetProvider\obj\Debug\InterNetProvider.csproj.CopyComplete
+C:\Users\User\Desktop\git\Kursovoy_Project\InterNetProvider\InterNetProvider\obj\Debug\InterNetProvider.exe
+C:\Users\User\Desktop\git\Kursovoy_Project\InterNetProvider\InterNetProvider\obj\Debug\InterNetProvider.pdb
+C:\Users\User\Desktop\git\Kursovoy_Project\InterNetProvider\InterNetProvider\obj\Debug\Windows\Order.g.cs
+C:\Users\User\Desktop\git\Kursovoy_Project\InterNetProvider\InterNetProvider\obj\Debug\Windows\Order.baml
