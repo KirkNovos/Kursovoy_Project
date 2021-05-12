@@ -51,7 +51,7 @@
                     <Image
                         Width="64" 
                         Height="64"
-                        Source="{Binding Logo}" />
+                        Source="{Binding Provider.Logo}" />
 
                     <TextBlock 
                         Text="{Binding Price}" 

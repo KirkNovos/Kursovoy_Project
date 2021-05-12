@@ -51,7 +51,7 @@
                             <Image
                         Width="64" 
                         Height="64"
-                        Source="{Binding Provider.Logo}" />
+                        Source="{Binding Provider.ImageUri}" />
                             <!-- ,TargetNullValue={StaticResource DefaultImage} -->
 
                             <TextBlock 
