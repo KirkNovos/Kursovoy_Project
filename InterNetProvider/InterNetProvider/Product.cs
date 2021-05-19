@@ -25,6 +25,7 @@ namespace InterNetProvider
         public int ProductTypeId { get; set; }
         public decimal Price { get; set; }
         public int StorageId { get; set; }
+        public string Image { get; set; }
     
         public virtual ProductType ProductType { get; set; }
         public virtual Storage Storage { get; set; }

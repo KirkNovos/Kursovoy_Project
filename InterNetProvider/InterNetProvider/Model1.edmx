@@ -14,6 +14,7 @@
           <Property Name="ProductTypeId" Type="int" Nullable="false" />
           <Property Name="Price" Type="money" Nullable="false" />
           <Property Name="StorageId" Type="int" Nullable="false" />
+          <Property Name="Image" Type="nvarchar" MaxLength="255" />
         </EntityType>
         <EntityType Name="ProductType">
           <Key>
@@ -162,6 +163,7 @@
           <NavigationProperty Name="ProductType" Relationship="Self.FK_Product_ProductType" FromRole="Product" ToRole="ProductType" />
           <NavigationProperty Name="Storage" Relationship="Self.FK_Product_Storage" FromRole="Product" ToRole="Storage" />
           <NavigationProperty Name="ProviderOrderProduct" Relationship="Self.FK_ProviderOrderProduct_Product" FromRole="Product" ToRole="ProviderOrderProduct" />
+          <Property Name="Image" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="ProductType">
           <Key>
@@ -310,6 +312,7 @@
           <EntitySetMapping Name="Product">
             <EntityTypeMapping TypeName="inetprovider_kpModel.Product">
               <MappingFragment StoreEntitySet="Product">
+                <ScalarProperty Name="Image" ColumnName="Image" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Title" ColumnName="Title" />
                 <ScalarProperty Name="ProductTypeId" ColumnName="ProductTypeId" />

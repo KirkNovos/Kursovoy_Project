@@ -4,6 +4,7 @@
     <EntitySetMapping Name="Product">
       <EntityTypeMapping TypeName="inetprovider_kpModel.Product">
         <MappingFragment StoreEntitySet="Product">
+          <ScalarProperty Name="Image" ColumnName="Image" />
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Title" ColumnName="Title" />
           <ScalarProperty Name="ProductTypeId" ColumnName="ProductTypeId" />

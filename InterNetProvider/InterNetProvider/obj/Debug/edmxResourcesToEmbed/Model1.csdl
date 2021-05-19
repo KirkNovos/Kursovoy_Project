@@ -12,6 +12,7 @@
     <NavigationProperty Name="ProductType" Relationship="Self.FK_Product_ProductType" FromRole="Product" ToRole="ProductType" />
     <NavigationProperty Name="Storage" Relationship="Self.FK_Product_Storage" FromRole="Product" ToRole="Storage" />
     <NavigationProperty Name="ProviderOrderProduct" Relationship="Self.FK_ProviderOrderProduct_Product" FromRole="Product" ToRole="ProviderOrderProduct" />
+    <Property Name="Image" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="ProductType">
     <Key>

@@ -9,6 +9,7 @@
     <Property Name="ProductTypeId" Type="int" Nullable="false" />
     <Property Name="Price" Type="money" Nullable="false" />
     <Property Name="StorageId" Type="int" Nullable="false" />
+    <Property Name="Image" Type="nvarchar" MaxLength="255" />
   </EntityType>
   <EntityType Name="ProductType">
     <Key>

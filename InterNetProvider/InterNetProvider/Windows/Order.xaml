@@ -13,7 +13,7 @@
         </Grid.ColumnDefinitions>
 
         <StackPanel VerticalAlignment="Bottom">
-            <Button Margin="5" x:Name="CreateOrdBtn" Content="Создание заказа"></Button>
+            <Button Margin="5" x:Name="CreateOrdBtn" Content="Создание заказа" Click="AddOrder_Click"></Button>
             <Button Margin="5" x:Name="EditOrdBtn" Content="Изменение Заказа"></Button>
             <Button Margin="5" x:Name="DelOrdBtn" Content="Удаление Заказа"></Button>
         </StackPanel>
@@ -51,14 +51,14 @@
                             <Image
                         Width="64" 
                         Height="64"
-                        Source="{Binding Provider.ImageUri}" />
+                        Source="{Binding Path=Provider.ImagePre}" />
                             <!-- ,TargetNullValue={StaticResource DefaultImage} -->
 
                             <TextBlock 
-                        Text="{Binding Total}" 
-                        Grid.Column="2" 
-                        HorizontalAlignment="Right" 
-                        Margin="10"/>
+                                Text="{Binding Total}" 
+                                Grid.Column="2" 
+                                HorizontalAlignment="Right" 
+                                Margin="10"/>
 
                             <!-- для содержимого рисуем вложенную сетку -->
                             <Grid Grid.Column="1" Margin="5">
@@ -75,11 +75,11 @@
                                     <TextBlock 
                                 Text=" | "/>
                                     <TextBlock 
-                                Text="{Binding Date}"/>
+                                Text="{Binding Provider.Title}"/>
                                 </StackPanel>
 
                                 <TextBlock 
-                            Text="{Binding Provider.Title}" 
+                            Text="{Binding Date}" 
                             Grid.Row="1"/>
                             </Grid>
                         </Grid>

@@ -11,8 +11,7 @@ namespace InterNetProvider
 {
     using System;
     using System.Collections.Generic;
-    using System.IO;
-
+    
     public partial class Provider
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -20,17 +19,7 @@ namespace InterNetProvider
         {
             this.ProviderOrder = new HashSet<ProviderOrder>();
         }
-
-
-        public Uri ImageUri
-        {
-            get
-            {
-                return new Uri(Path.Combine(Environment.CurrentDirectory, Logo));
-            }
-        }
-
-
+    
         public int Id { get; set; }
         public string Title { get; set; }
         public string Adress { get; set; }
