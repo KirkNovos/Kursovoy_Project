@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -14,6 +15,68 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
+
+namespace InterNetProvider
+{
+    public partial class Provider
+    {
+        public string ProvName
+        {
+            get
+            {
+                return Title;
+            }
+        }
+    }
+
+    public partial class ProviderOrder
+    {
+        public string DateTimeText
+        {
+            get
+            {
+                // в принципе то же самое вернет и просто ToString(), но его значение зависит
+                // от культурной среды, поэтому лучше задать жестко
+                return Date.ToString("dd.MM.yyyy hh:mm:ss");
+            }
+            set
+            {
+                // в круглых скобках регуляного выражения те значения, которые попадут в match.Groups
+                // точка спецсимвол, поэтому ее экранируем
+                // \s - пробел (любой разделитель)
+                // \d - цифра
+                // модификатор "+" означает что должен быть как минимум один элемент (можно больше)
+                Regex regex = new Regex(@"(\d+)\.(\d+)\.(\d+)\s+(\d+):(\d+):(\d+)");
+                Match match = regex.Match(value);
+                if (match.Success)
+                {
+                    try
+                    {
+                            Date = new DateTime(
+                            Convert.ToInt32(match.Groups[3].Value),
+                            Convert.ToInt32(match.Groups[2].Value),
+                            Convert.ToInt32(match.Groups[1].Value),
+                            Convert.ToInt32(match.Groups[4].Value),
+                            Convert.ToInt32(match.Groups[5].Value),
+                            Convert.ToInt32(match.Groups[6].Value)
+                            );
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Не верный формат даты/времени");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Не верный формат даты/времени");
+                }
+            }
+        }
+    }
+
+}
+
+
 namespace InterNetProvider.Windows
 {
     /// <summary>
@@ -21,6 +84,9 @@ namespace InterNetProvider.Windows
     /// </summary>
     public partial class OrderWindow : Window, INotifyPropertyChanged
     {
+
+
+        public List<Provider> ProviderList { get; set; }
         public ProviderOrder CurrentOrder { get; set; }
 
         public string WindowName
@@ -34,31 +100,14 @@ namespace InterNetProvider.Windows
         public OrderWindow(ProviderOrder order)
         {
             InitializeComponent();
+            DataContext = this;
             CurrentOrder = order;
+
+            ProviderList = Core.DB.Provider.ToList();
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
-        /*
-        private void GetImageButton(object sender, RoutedEventArgs e)
-        {
-            OpenFileDialog GetImageDialog = new OpenFileDialog();
-            // задаем фильтр для выбираемых файлов
-            // до символа "|" идет произвольный текст, а после него шаблоны файлов раздеренные точкой с запятой
-            GetImageDialog.Filter = "Файлы изображений: (*.png, *.jpg)|*.png;*.jpg";
-            // чтобы не искать по всему диску задаем начальный каталог
-            GetImageDialog.InitialDirectory = Environment.CurrentDirectory;
-            if (GetImageDialog.ShowDialog() == true)
-            {
-                // перед присвоением пути к картинке обрезаем начало строки, т.к. диалог возвращает полный путь
-                // (тут конечно еще надо проверить есть ли в начале Environment.CurrentDirectory)
-                CurrentOrder.Logo = GetImageDialog.FileName.Substring(Environment.CurrentDirectory.Length + 1);
-                if (PropertyChanged != null)
-                {
-                    PropertyChanged(this, new PropertyChangedEventArgs("CurrentOrder"));
-                }
-            }
-        }
-        */
+        
         private void SaveButton(object sender, RoutedEventArgs e)
         {
             if (CurrentOrder.Total <= 0)
@@ -66,7 +115,7 @@ namespace InterNetProvider.Windows
                 MessageBox.Show("Стоимость заказа должна быть больше ноля");
                 return;
             }
-
+            
             // если запись новая, то добавляем ее в список
             if (CurrentOrder.Id == 0)
                 Core.DB.ProviderOrder.Add(CurrentOrder);

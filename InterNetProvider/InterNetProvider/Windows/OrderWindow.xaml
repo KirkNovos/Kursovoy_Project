@@ -13,27 +13,24 @@
             <ColumnDefinition  Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <Image 
-            Grid.Column="0"
-            VerticalAlignment="Top"
-            MaxHeight="200" 
-            MaxWidth="200" 
-            Source="{Binding CurrentOrder.ImageUri}" />
-        
         <StackPanel Margin="5" Grid.Column="1">
             <Label Content="Номер заказа"/>
             <TextBox Text="{Binding CurrentOrder.Num}"/>
             <Label Content="Дата заказа"/>
-            <DatePicker Text="{Binding CurrentOrder.Date}"/>
+            <TextBox Text="{Binding CurrentOrder.DateTimeText}"/>
             <Label Content="Цена заказа"/>
             <TextBox Text="{Binding CurrentOrder.Total}"/>
             <Label Content="Поставщик"/>
             <ComboBox
-                Name="ProviderComboBox"
-                SelectedIndex="0"
-                SelectionChanged="ProviderComboBox_SelectionChanged"
-                ItemsSource="{Binding ProviderComboBoxList}"/>
-            <Button Content="Выбрать картинку" Margin="7" HorizontalAlignment="left" Click="GetImageButton"></Button>
+                HorizontalAlignment="left"
+                ItemsSource="{Binding ProviderList}"
+                SelectedItem="{Binding CurrentOrder.Provider}">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <Label Content="{Binding Title}"/>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
             <Button Content="Сохранить" Margin="7" HorizontalAlignment="left" Click="SaveButton"></Button>
         </StackPanel>
     </Grid>

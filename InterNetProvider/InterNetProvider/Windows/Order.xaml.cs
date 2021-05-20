@@ -53,6 +53,10 @@ namespace InterNetProvider.Windows
             set
             {
                 _OrderList = value;
+                if (PropertyChanged != null)
+                {
+                    PropertyChanged(this, new PropertyChangedEventArgs("OrderList"));
+                }
             }
         }
 
@@ -78,6 +82,35 @@ namespace InterNetProvider.Windows
                 PropertyChanged(this, new PropertyChangedEventArgs("OrderCount"));
             }
         }
+
+        private void EditOrder_Click(object sender, RoutedEventArgs e)
+        {
+            var SelectedOrder = ProductListView.SelectedItem as ProviderOrder;
+            var EditOrderWindow = new OrderWindow(SelectedOrder);
+            if ((bool)EditOrderWindow.ShowDialog())
+            {
+                // при успешном завершении не забываем перерисовать список услуг
+                PropertyChanged(this, new PropertyChangedEventArgs("OrderList"));
+                // и еще счетчики - их добавьте сами
+            }
+        }
+
+        private void DelOrd_Click(object sender, RoutedEventArgs e)
+        {
+            // у DataGrid-a есть свойство SelectedItem - его приводим к типу Service
+            var item = ProductListView.SelectedItem as ProviderOrder;
+
+            // метод Remove нужно завернуть в конструкцию try..catch, на случай, если 
+            // база спроектирована криво и нет каскадного удаления - это сделайте сами
+            Core.DB.ProviderOrder.Remove(item);
+
+            // сохраняем изменения
+            Core.DB.SaveChanges();
+
+            // перечитываем изменившийся список, не забывая в сеттере вызвать PropertyChanged
+            OrderList = Core.DB.ProviderOrder.ToList();
+        }
+
 
     }
 

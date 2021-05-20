@@ -46,7 +46,6 @@
                     VerticalAlignment="Center"
                     KeyUp="TextBox_KeyUp"/>
             
-            <Button Margin="5">Склад</Button>
             <Button Margin="5" x:Name="OrderProvid" Content="Заказ поставок" Click="OrdProvidClick"></Button>
             <Button Margin="5" x:Name="ExitBtn" Content="Выход" Click="ExitButtonClick"></Button>
         </StackPanel>
