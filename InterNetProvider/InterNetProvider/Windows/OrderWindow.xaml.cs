@@ -35,17 +35,10 @@ namespace InterNetProvider
         {
             get
             {
-                // в принципе то же самое вернет и просто ToString(), но его значение зависит
-                // от культурной среды, поэтому лучше задать жестко
                 return Date.ToString("dd.MM.yyyy hh:mm:ss");
             }
             set
             {
-                // в круглых скобках регуляного выражения те значения, которые попадут в match.Groups
-                // точка спецсимвол, поэтому ее экранируем
-                // \s - пробел (любой разделитель)
-                // \d - цифра
-                // модификатор "+" означает что должен быть как минимум один элемент (можно больше)
                 Regex regex = new Regex(@"(\d+)\.(\d+)\.(\d+)\s+(\d+):(\d+):(\d+)");
                 Match match = regex.Match(value);
                 if (match.Success)
@@ -79,9 +72,6 @@ namespace InterNetProvider
 
 namespace InterNetProvider.Windows
 {
-    /// <summary>
-    /// Логика взаимодействия для OrderWindow.xaml
-    /// </summary>
     public partial class OrderWindow : Window, INotifyPropertyChanged
     {
 
@@ -115,12 +105,8 @@ namespace InterNetProvider.Windows
                 MessageBox.Show("Стоимость заказа должна быть больше ноля");
                 return;
             }
-            
-            // если запись новая, то добавляем ее в список
             if (CurrentOrder.Id == 0)
                 Core.DB.ProviderOrder.Add(CurrentOrder);
-
-            // сохранение в БД
             try
             {
                 Core.DB.SaveChanges();

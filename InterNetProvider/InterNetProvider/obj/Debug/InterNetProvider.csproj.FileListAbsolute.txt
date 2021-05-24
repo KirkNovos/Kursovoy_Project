@@ -46,3 +46,4 @@ C:\Users\User\Desktop\git\Kursovoy_Project\InterNetProvider\InterNetProvider\obj
 C:\Users\User\Desktop\git\Kursovoy_Project\InterNetProvider\InterNetProvider\obj\Debug\InterNetProvider.csprojAssemblyReference.cache
 C:\Users\User\Desktop\git\Kursovoy_Project\InterNetProvider\InterNetProvider\obj\Debug\Windows\OrderWindow.g.cs
 C:\Users\User\Desktop\git\Kursovoy_Project\InterNetProvider\InterNetProvider\obj\Debug\Windows\OrderWindow.baml
+C:\Users\User\Desktop\git\Kursovoy_Project\InterNetProvider\InterNetProvider\obj\Debug\App.baml

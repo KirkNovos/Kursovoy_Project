@@ -26,17 +26,23 @@ namespace InterNetProvider
             }
         }
     }
+
+    public partial class ProviderOrder
+    {
+        public string TotalString
+        {
+            get
+            {
+                return Total.ToString("#.##");
+            }
+        }
+    }
 }
 
 
 namespace InterNetProvider.Windows
 {
 
-    
-
-    /// <summary>
-    /// Логика взаимодействия для Order.xaml
-    /// </summary>
     public partial class Order : Window, INotifyPropertyChanged
     {
 
@@ -70,13 +76,11 @@ namespace InterNetProvider.Windows
 
         private void AddOrder_Click(object sender, RoutedEventArgs e)
         {
-            // создаем новую услугу
             var NewOrder = new ProviderOrder();
 
             var NewOrderWindow = new OrderWindow(NewOrder);
             if ((bool)NewOrderWindow.ShowDialog())
             {
-                // список услуг нужно перечитать с сервера
                 OrderList = Core.DB.ProviderOrder.ToList();
                 PropertyChanged(this, new PropertyChangedEventArgs("FilteredOrderCount"));
                 PropertyChanged(this, new PropertyChangedEventArgs("OrderCount"));
@@ -89,25 +93,15 @@ namespace InterNetProvider.Windows
             var EditOrderWindow = new OrderWindow(SelectedOrder);
             if ((bool)EditOrderWindow.ShowDialog())
             {
-                // при успешном завершении не забываем перерисовать список услуг
                 PropertyChanged(this, new PropertyChangedEventArgs("OrderList"));
-                // и еще счетчики - их добавьте сами
             }
         }
 
         private void DelOrd_Click(object sender, RoutedEventArgs e)
         {
-            // у DataGrid-a есть свойство SelectedItem - его приводим к типу Service
             var item = ProductListView.SelectedItem as ProviderOrder;
-
-            // метод Remove нужно завернуть в конструкцию try..catch, на случай, если 
-            // база спроектирована криво и нет каскадного удаления - это сделайте сами
             Core.DB.ProviderOrder.Remove(item);
-
-            // сохраняем изменения
             Core.DB.SaveChanges();
-
-            // перечитываем изменившийся список, не забывая в сеттере вызвать PropertyChanged
             OrderList = Core.DB.ProviderOrder.ToList();
         }
 

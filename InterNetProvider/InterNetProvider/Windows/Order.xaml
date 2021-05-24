@@ -55,7 +55,7 @@
                             <!-- ,TargetNullValue={StaticResource DefaultImage} -->
                             
                             <TextBlock 
-                                Text="{Binding Total}" 
+                                Text="{Binding TotalString}" 
                                 Grid.Column="2" 
                                 HorizontalAlignment="Right" 
                                 Margin="10"/>

@@ -98,7 +98,7 @@
                         Source="{Binding Path=ImagePreview}" />
 
                     <TextBlock 
-                        Text="{Binding Price}" 
+                        Text="{Binding PriceString}" 
                         Grid.Column="2" 
                         HorizontalAlignment="Right" 
                         Margin="10"/>

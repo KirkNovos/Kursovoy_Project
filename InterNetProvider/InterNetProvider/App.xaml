@@ -4,6 +4,8 @@
              xmlns:local="clr-namespace:InterNetProvider"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="Aqua"/>
+        </Style>
     </Application.Resources>
 </Application>

@@ -18,11 +18,6 @@ namespace InterNetProvider
 {
     public partial class Product
     {
-        // ссылка на картинку
-        // по ТЗ, если картинка не найдена, то должна выводиться картинка по-умолчанию
-        // в XAML-е можно это сделать средствами разметки, но там есть условие что вместо ссылки на картинку получен NULL
-        // у нас же возможна ситуация, когда в базе есть путь к картинке, но самой картинки в каталоге нет
-        // поэтому я сделал проверку наличия файла картинки и возвращаю картинку по-умолчанию, если нужной нет 
         public Uri ImagePreview
         {
             get
@@ -66,9 +61,6 @@ namespace InterNetProvider
 
 
     }
-        /// <summary>
-        /// Логика взаимодействия для MainWindow.xaml
-        /// </summary>
     public partial class MainWindow : Window, INotifyPropertyChanged
     {
         private List<Product> _ProductList;
@@ -183,7 +175,6 @@ namespace InterNetProvider
                 _CurrentPriceFilter = value;
                 if (PropertyChanged != null)
                 {
-                    // при изменении фильтра список перерисовывается
                     PropertyChanged(this, new PropertyChangedEventArgs("ProductList"));
                     PropertyChanged(this, new PropertyChangedEventArgs("ServicesCount"));
                     PropertyChanged(this, new PropertyChangedEventArgs("FilteredServicesCount"));
@@ -210,7 +201,6 @@ namespace InterNetProvider
                 _SearchFilter = value;
                 if (PropertyChanged != null)
                 {
-                    // при изменении фильтра список перерисовывается
                     PropertyChanged(this, new PropertyChangedEventArgs("ProductList"));
                     PropertyChanged(this, new PropertyChangedEventArgs("ServicesCount"));
                     PropertyChanged(this, new PropertyChangedEventArgs("FilteredProductCount"));
@@ -238,7 +228,5 @@ namespace InterNetProvider
                 return ProductList.Count;
             }
         }
-
-
     }
 }
